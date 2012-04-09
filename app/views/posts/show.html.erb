@@ -1,18 +1,19 @@
 <%- model_class = @post.class -%>
-<h1><%=t '.title', :default => model_class.model_name.human %></h1>
 
 <p>
-  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
-  <%= @post.name %>
+  <i class="icon-user"></i> <%= @post.name %>
 </p>
 <p>
-  <strong><%= model_class.human_attribute_name(:title) %>:</strong><br>
-  <%= @post.title %>
+  <b><%= @post.title %></b>
 </p>
 <p>
-  <strong><%= model_class.human_attribute_name(:content) %>:</strong><br>
   <%= @post.content %>
 </p>
+
+<%= render @post.comments %>
+
+<h4>Add a comment:</h4>
+<%= render "comments/form" %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

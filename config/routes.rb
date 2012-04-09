@@ -55,6 +55,9 @@ Blog::Application.routes.draw do
   # root :to => 'welcome#index'
 	root :to => 'home#index'
 
+  resources :posts do
+    resources :comments
+  end
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
