@@ -1,6 +1,6 @@
 <p>
-	<i class="icon-user"></i> <%= comment.commenter %> <i class="icon-comment"></i> <%= comment.body %>
-	<%= link_to "R", [comment.post, comment],
-		:confirm => 'Are you sure?',
-		:method => :delete %>
+	<i class="icon-user"></i> <%= comment.commenter %> 
+	<i class="icon-comment"></i> <%= comment.body %>
+	<%= link_to [comment.post, comment], :confirm => 'Are you sure?', :method => :delete do %>
+	<i class="icon-trash"></i> <% end %>
 </p>	
