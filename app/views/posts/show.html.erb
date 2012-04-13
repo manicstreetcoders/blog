@@ -1,11 +1,15 @@
 <%- model_class = @post.class -%>
 
+<p id="notice"><%= notice %></p>
+
 <p>
   <i class="icon-user"></i> <%= @post.name %>
 </p>
+
 <p>
   <b><%= @post.title %></b>
 </p>
+
 <p>
   <%= @post.content %>
 </p>
