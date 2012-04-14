@@ -15,7 +15,7 @@
       <tr>
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= post.name %></td>
-        <td><%= post.title %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.content %></td>
         <td><%=l post.created_at %></td>
         <td>
