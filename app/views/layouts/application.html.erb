@@ -28,9 +28,9 @@
           </ul>
           <ul class="nav pull-right">
             <li> 
-              <form class="navbar-search" action="#">
-              <input class="search-query" type="text" placeholder="search microlog" name="q" autocomplete="off"> 
-              </form> 
+              <%= form_tag posts_path, method: :get, :class => "navbar-search" do %>
+                <%= text_field_tag :query, params[:query], :class => "search-query", :placeholder => "search microlog" %>
+              <% end %>
             </li>
             <li> <%= link_to "sign-in", "#" %> </li>
           </ul>
