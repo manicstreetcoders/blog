@@ -14,7 +14,13 @@
       <tr>
         <td><%= link_to post.id, post_path(post) %></td>
         <td><%= link_to post.title, post_path(post) %></td>
-        <td><%= post.content %></td>
+        <td>
+			<% if post.content.match(/^https?:\/\/[\S]+/)%>
+			<%= link_to post.content, post.content %>
+			<% else %>
+			<%= post.content %>
+			<% end %>
+		</td>
         <td><%= ago(post.created_at) %></td>
         <td>
           <%= link_to t('.edit', :default => "ed"),
