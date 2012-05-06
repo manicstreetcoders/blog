@@ -2,4 +2,4 @@
 <h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
                                :default => "microlog") %></h1>
 <p>
-<%= render :partial => 'form' %>
+<%= render :partial => 'form', :locals => {:action => "Create"} %>
