@@ -17,7 +17,9 @@
 <%= render @post.comments.order('id ASC') %>
 
 <h4>Add a comment:</h4>
+<p>
 <%= render "comments/form" %>
+</p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => "bk"),
