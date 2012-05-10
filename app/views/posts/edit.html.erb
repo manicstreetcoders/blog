@@ -1,5 +1,5 @@
 <%- model_class = @post.class -%>
 <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
                                  :default => "Edit microlog") %></h1>
-<p>
+<br>
 <%= render :partial => 'form', :locals => {:action => "Update"} %>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index  
-    @posts = Post.text_search(params[:query]).paginate(:page => params[:page]).order('id DESC').per_page(5)
+    @posts = Post.paginate(:page => params[:page]).order('id DESC').per_page(5)
     
     respond_to do |format|
       format.html # index.html.erb
@@ -10,6 +10,15 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @posts = Post.text_search(params[:query]).order('id DESC')
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @posts }
+    end
+  end
+  
   # GET /posts/1
   # GET /posts/1.json
   def show
