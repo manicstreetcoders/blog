@@ -11,5 +11,7 @@ Blog::Application.routes.draw do
   end
 
   match 'search' => 'posts#search'
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'signout', to: 'sessions#destroy', as: 'signout'
   
 end
