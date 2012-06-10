@@ -34,7 +34,7 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = Post.new
-		@post.name = "Nishijima Hidetoshi"
+    @post.name = session[:user_name] || "Nishijima Hidetoshi"
 
     respond_to do |format|
       format.html # new.html.erb
